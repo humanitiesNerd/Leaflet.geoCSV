@@ -7,7 +7,7 @@
 
       <!-- Leaflet 0.5: https://github.com/CloudMade/Leaflet-->
 		<link rel="stylesheet" href="../../lib/leaflet.css" />
-		<!--[if lte IE 8]> <link rel="stylesheet" href="../../lib/leaflet.ie.css" />  <![endif]-->  
+		<!--[if lte IE 8]> <link rel="stylesheet" href="../../lib/leaflet.ie.css" />  <![endif]-->
 		<script src="../../lib/leaflet.js"></script>
 
 		<!-- MarkerCluster https://github.com/danzel/Leaflet.markercluster -->
@@ -22,12 +22,12 @@
 		<!-- jQuery 1.8.3: http://jquery.com/ -->
 		<script src="../../lib/jquery.js"></script>
 
-		<style>	
+		<style>
 		html, body, #mapa {
 			margin: 0;
 			padding: 0;
 			width: 100%;
-			height: 100%;	
+			height: 100%;
 			font-family: Arial, sans-serif;
 			font-color: #38383;
 		}
@@ -129,7 +129,7 @@ var bankias = L.geoCsv(null, {
 $.ajax ({
 	type:'GET',
 	dataType:'text',
-	url:'https://docs.google.com/spreadsheets/d/1PDLJ5HRewXC9sUYgFqb2TR7H5G7V6KjfD_NCkhBgaSg/export?format=csv',
+	url:'marescotti.csv',
    error: function() {
      alert('No se pudieron cargar los datos');
    },
@@ -149,7 +149,7 @@ $.ajax ({
 $('#localizame').click(function(e) {
 	mapa.locate();
 	$('#localizame').text('Localizando...');
-	mapa.on('locationfound', function(e) { 
+	mapa.on('locationfound', function(e) {
 		mapa.setView(e.latlng, 15);
 		$('#localizame').text('Bankias cercanos');
 	});
