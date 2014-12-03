@@ -87,10 +87,10 @@
 	</head>
 	<body>
 		<div id="mapa"></div>
-		<div id="cargando">Cargando...</div>
+		<div id="cargando">Sto caricando i dati...</div>
 
 		<div id="botonera">
-			<button id="localizame" class="boton">Bankias cercanos</button>
+			<button id="localizame" class="boton">Cerca un punto vicino a te</button>
 		</div>
 
 <script>
@@ -108,7 +108,12 @@ var bankias = L.geoCsv(null, {
 		var popup = '';
 		for (var clave in feature.properties) {
 			var title = bankias.getPropertyTitle(clave);
-			popup += '<b>'+title+'</b><br />'+feature.properties[clave]+'<br /><br />';
+                        if (title == 'link')
+                           {popup += '<b><a href="'+ feature.properties[clave] +'" target="_new-tab">pagina completa</a></b><br /><br />' }
+                        else
+                        {
+		        popup += '<b>'+title+'</b><br />'+feature.properties[clave]+'<br /><br />';
+                        }
 		}
 		layer.bindPopup(popup);
 	},
@@ -131,7 +136,7 @@ $.ajax ({
 	dataType:'text',
 	url:'marescotti.csv',
    error: function() {
-     alert('No se pudieron cargar los datos');
+     alert('Non ho potuto caricare i dati');
    },
 	success: function(csv) {
       var cluster = new L.MarkerClusterGroup();
