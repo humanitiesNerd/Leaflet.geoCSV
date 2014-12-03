@@ -1,2 +1,2 @@
-link;valore_PM_2.5;valore_O3;valore_NO2;lat;lng;tipo zona;tipo stazione
-http://informaticitarantini.net;10;113;50;40.35228;18.1766;Urbana;Traffico
+link,valore_PM_2.5,valore_O3,valore_NO2,lat,lng,tipo zona,tipo stazione
+http://informaticitarantini.net,10,113,50,40.35228,18.1766,Urbana,Traffico
