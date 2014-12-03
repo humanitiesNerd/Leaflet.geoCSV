@@ -16,10 +16,10 @@ return $size;
 
 
 $file_size = retrieve_remote_file_size( "https://docs.google.com/spreadsheets/d/1PDLJ5HRewXC9sUYgFqb2TR7H5G7V6KjfD_NCkhBgaSg/export?format=csv" );
-
+echo($file_size);
 
 //echo $file_size."<br />";
-$localfile= filesize("mar.csv");
+$localfile= filesize("marescotti.csv");
 
 
 //echo $localfile;
@@ -30,6 +30,7 @@ $file_processato = "marescotti.csv";
 
 $src = fopen($url, 'r');
 $dest = fopen($file_originale, 'w');
+$dest = fopen($file_processato, 'w');
 stream_copy_to_stream($src, $dest);
 
 $search2="\"d+\,d+\"";
