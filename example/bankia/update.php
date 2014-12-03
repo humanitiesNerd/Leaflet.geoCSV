@@ -32,12 +32,11 @@ $src = fopen($url, 'r');
 $dest = fopen($file_originale, 'w');
 stream_copy_to_stream($src, $dest);
 
-$search2="""d+\,d+""";
+$search2="\"d+\,d+\"";
 $replace2="d+\.d+";
 $output2 = passthru("sed -e 's/$search2/$replace2/g' $file_originale > $file_processato");
-
+}
 
 
 
 ?>
-
